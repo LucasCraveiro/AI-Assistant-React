@@ -1,0 +1,91 @@
+.navBar {
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo_links_container {
+    display: flex;
+
+    .links_container {
+      display: none;
+
+      li {
+        text-decoration: none;
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+
+        a {
+          text-decoration: none;
+          font-family: "Inter";
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #111827;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+
+    .logo_link {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        img {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  .signin_wrapper {
+    .bars {
+      &:hover {
+        opacity: 0.8;
+      }
+
+      @media only screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    .signin_button {
+      display: none;
+
+      @media only screen and (min-width: 768px) {
+        display: block;
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-family: "Inter";
+        font-weight: 600;
+        color: #111827;
+        font-size: 16px;
+        line-height: 24px;
+        border: solid 2px #f3f4f6;
+        transition: all ease-in-out 0.2s;
+      }
+
+      &:hover {
+        @media only screen and (min-width: 768px) {
+          border-color: #111827;
+        }
+      }
+    }
+  }
+}

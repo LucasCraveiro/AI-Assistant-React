@@ -1,0 +1,99 @@
+#assistant_docs {
+  background-color: #f9fafb;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 72px;
+
+  * {
+    font-family: "Inter";
+    text-align: center;
+  }
+
+  .content_wrapper {
+    padding: 40px 0;
+
+    @media only screen and (min-width: 992px) {
+      padding: 56px 0;
+    }
+
+    .top_title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 28px;
+      color: #6b7280;
+
+      @media only screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 64px;
+      color: #111827;
+      margin: 16px 0;
+
+      @media only screen and (max-width: 767px) {
+        font-size: 28px;
+        line-height: 36px;
+        width: 50%;
+        margin: 0 auto 16px;
+      }
+
+      @media only screen and (min-width: 1200px) {
+        font-size: 56px;
+      }
+    }
+
+    .description {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+      color: #6b7280;
+      width: 70%;
+      margin: 0 auto 24px;
+
+      @media only screen and (max-width: 767px) {
+        font-size: 16px;
+        line-height: 24px;
+        width: 70%;
+      }
+
+      @media only screen and (min-width: 1360px) {
+        width: 50%;
+      }
+    }
+
+    .get_started_btn {
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 24px;
+      color: #4c35de;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        opacity: 0.9;
+        gap: 1rem;
+      }
+    }
+  }
+
+  .assistant_img {
+    max-width: 654px;
+
+    @media only screen and (max-width: 767px) {
+      max-width: 354px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      max-width: 854px;
+    }
+  }
+}
