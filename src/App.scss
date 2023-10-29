@@ -22,3 +22,14 @@ body {
     padding: 0 72px;
   }
 }
+
+.lazy-load-block {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s, transform 1s;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
