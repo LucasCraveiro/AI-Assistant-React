@@ -19,6 +19,16 @@
     padding-top: 72px;
   }
 
+  @media (max-height: 800px) {
+    height: 110vh;
+  }
+
+  @media only screen and (max-width: 767px) {
+    @media (max-height: 800px) {
+      height: 80vh;
+    }
+  }
+
   * {
     font-family: "Inter";
     text-align: center;

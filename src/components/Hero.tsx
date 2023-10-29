@@ -1,9 +1,15 @@
+import { useState } from "react";
 import "./Hero.scss";
 import Options from "../assets/optionsInput.png";
 import Bolt from "../assets/bolt.svg";
 import { HeroProps } from "../types";
 
 const Hero: React.FC<HeroProps> = (dataHero) => {
+  const [openSuggestion, setOpenSuggestion] = useState(false);
+
+  const inputHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    setOpenSuggestion(!!e.target.value);
+  };
   return (
     <section id="hero_section">
       <div className="content_wrapper_hero">
@@ -22,10 +28,18 @@ const Hero: React.FC<HeroProps> = (dataHero) => {
         </a>
       </div>
       <div className="input_wrapper">
-        <input type="text" id="input_user" placeholder="Ask me anything" />
+        <input
+          type="text"
+          id="input_user"
+          placeholder="Ask me anything"
+          onChange={(e) => inputHandler(e)}
+        />
         <img src={Bolt} alt="Bolt image" className="icon" />
       </div>
-      <div id="image_wrapper" className="image_wrapper">
+      <div
+        id="image_wrapper"
+        className={`image_wrapper ${openSuggestion ? "show" : ""}`}
+      >
         <img src={Options} alt="Options image" className="options" />
         <div className="overlay"></div>
       </div>
