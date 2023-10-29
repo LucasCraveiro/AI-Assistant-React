@@ -1,24 +1,29 @@
-import React from "react";
 import "./App.scss";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
+import InfoBlocks from "./components/InfoBlocks";
+import AssitantDocs from "./components/AssistentDocs";
+import GenerateCTA from "./components/GenerateCTA";
 import Footer from "./components/Footer";
 
-const LazyInfoBlocks = React.lazy(() => import("./components/InfoBlocks"));
-const LazyAssitantDocs = React.lazy(() => import("./components/AssistentDocs"));
-const LazyGenerateCTA = React.lazy(() => import("./components/GenerateCTA"));
+import {
+  dataCTA,
+  dataAssistantDocs,
+  dataInfoBlocks,
+  dataHero,
+  dataFooter,
+  dataNavBar,
+} from "./helpers";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Hero />
-      <React.Suspense>
-        <LazyInfoBlocks />
-        <LazyAssitantDocs />
-        <LazyGenerateCTA />
-      </React.Suspense>
-      <Footer />
+      <NavBar {...dataNavBar} />
+      <Hero {...dataHero} />
+      <InfoBlocks {...dataInfoBlocks} />
+      <AssitantDocs {...dataAssistantDocs} />
+      <GenerateCTA {...dataCTA} />
+      <Footer {...dataFooter} />
     </>
   );
 }

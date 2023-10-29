@@ -2,8 +2,9 @@ import "./NavBar.scss";
 import arrowDown from "../assets/arrow.svg";
 import bars from "../assets/bars.svg";
 import logo from "../assets/Logo.svg";
+import { NavBarProps } from "../types";
 
-const NavBar = () => {
+const NavBar: React.FC<NavBarProps> = (dataNavBar) => {
   return (
     <nav className="navBar">
       <div className="logo_links_container">
@@ -11,23 +12,17 @@ const NavBar = () => {
           <img src={logo} alt="Durable" />
         </a>
         <ul className="links_container">
-          <li>
-            <a href="/">Products</a>
-            <img className="arrow_down" src={arrowDown} alt="Arrow Down" />
-          </li>
-          <li>
-            <a href="/">Resources</a>
-            <img className="arrow_down" src={arrowDown} alt="Arrow Down" />
-          </li>
-          <li>
-            <a href="/">Tools</a>
-            <img className="arrow_down" src={arrowDown} alt="Arrow Down" />
-          </li>
+          {dataNavBar.links.map((link) => (
+            <li>
+              <a href="/">{link}</a>
+              <img className="arrow_down" src={arrowDown} alt="Arrow Down" />
+            </li>
+          ))}
         </ul>
       </div>
       <div className="signin_wrapper">
         <a className="signin_button" href="/">
-          Sign In
+          {dataNavBar.sign_in}
         </a>
         <img className="bars" src={bars} alt="Bars" />
       </div>
