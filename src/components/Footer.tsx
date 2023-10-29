@@ -4,8 +4,9 @@ import instagram from "../assets/icon-Instagram.svg";
 import twitter from "../assets/icon-Twitter.svg";
 import linkedin from "../assets/icon-LinkedIn.svg";
 import flag from "../assets/united_states.svg";
+import { FooterProps } from "../types";
 
-const Footer = () => {
+const Footer: React.FC<FooterProps> = (dataFooter) => {
   return (
     <footer id="footer-AI" className="lazy-section">
       <div className="footer_logo_container">
@@ -13,18 +14,18 @@ const Footer = () => {
           <img src={logo} alt="Durable" />
         </a>
         <p>
-          Durable makes owning a business easier <br className="break_line" />
-          than having a job
+          {dataFooter.headline_1} <br className="break_line" />
+          {dataFooter.headline_2}
         </p>
         <div className="language_box">
           <img className="language" src={flag} alt="US English" />
           <select name="language" id="language_select">
-            <option value="English">English</option>
-            <option value="Spanish">Spanish</option>
-            <option value="Portuguese">Portuguese</option>
+            {dataFooter.languages.map((language) => (
+              <option value={language}>{language}</option>
+            ))}
           </select>
         </div>
-        <p className="established">©2023 Durable, Inc.</p>
+        <p className="established">{dataFooter.established}</p>
         <div id="social_media_container">
           <a href="/">
             <img src={twitter} alt="Twitter" />
@@ -39,23 +40,20 @@ const Footer = () => {
       </div>
       <div className="footer_links">
         <div className="links_box">
-          <h5>Product</h5>
-          <a href="/">Money</a>
-          <a href="/">Invoicing</a>
-          <a href="/">CRM</a>
-          <a href="/">Review automation</a>
-          <a href="/">Website builder</a>
+          <h5>{dataFooter.product_menu_title}</h5>
+          {dataFooter.product_menu.map((product_link) => (
+            <a href="/">{product_link}</a>
+          ))}
         </div>
         <div className="links_box">
-          <h5>Company</h5>
-          <a href="/">About</a>
-          <a href="/">Carrers</a>
-          <a href="/">Privacy policy</a>
-          <a href="/">Terms of Service</a>
+          <h5>{dataFooter.company_menu_title}</h5>
+          {dataFooter.company_menu.map((company_link) => (
+            <a href="/">{company_link}</a>
+          ))}
         </div>
       </div>
       <div className="mobile_social_media">
-        <p>©2023 Durable, Inc.</p>
+        <p>{dataFooter.established}</p>
         <div className="social_media_icons">
           <a href="/">
             <img src={twitter} alt="Twitter" />

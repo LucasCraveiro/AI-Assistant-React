@@ -1,23 +1,24 @@
 import "./Hero.scss";
 import Options from "../assets/optionsInput.png";
 import Bolt from "../assets/bolt.svg";
+import { HeroProps } from "../types";
 
-const Hero = () => {
+const Hero: React.FC<HeroProps> = (dataHero) => {
   return (
     <section id="hero_section">
       <div className="content_wrapper_hero">
         <h1 className="title">
-          Your always-ready <br />
-          AI assistant.
+          {dataHero.title_1} <br />
+          {dataHero.title_2}
         </h1>
         <p className="description">
-          Introducing the conversational AI trained to grow your business.
+          {dataHero.description_1}
           <br />
-          Generate ideas, answer questions, complete tasks. <br />
-          Just ask.
+          {dataHero.description_2} <br />
+          {dataHero.description_3}
         </p>
         <a className="get_started_hero_button" href="/">
-          Get started
+          {dataHero.button_txt}
         </a>
       </div>
       <div className="input_wrapper">

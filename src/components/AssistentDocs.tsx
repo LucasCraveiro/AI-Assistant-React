@@ -1,19 +1,17 @@
 import "./AssistentDocs.scss";
 import AIDocs from "../assets/Assistant_docs.png";
 import ArrowRight from "../assets/arrow-right.svg";
+import { AssistantDocsProps } from "../types";
 
-const AssitantDocs = () => {
+const AssitantDocs: React.FC<AssistantDocsProps> = (dataAssistantDocs) => {
   return (
     <section id="assistant_docs" className="lazy-section">
       <div className="content_wrapper">
-        <p className="top_title">Organized Documents</p>
-        <h1 className="title">Save anything for later</h1>
-        <p className="description">
-          Never lose track of the business conversations that matter. Save,
-          organize, and access saved outputs in your Assistant Documents.
-        </p>
+        <p className="top_title">{dataAssistantDocs.top_title}</p>
+        <h1 className="title">{dataAssistantDocs.title}</h1>
+        <p className="description">{dataAssistantDocs.description}</p>
         <a className="get_started_btn" href="/">
-          Get Started
+          {dataAssistantDocs.button_txt}
           <img src={ArrowRight} alt="Arrow Right image" />
         </a>
       </div>
